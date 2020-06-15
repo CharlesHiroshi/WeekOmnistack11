@@ -1,3 +1,4 @@
+// Criando tabelas e campos atrav[es do knex
 exports.up = function (knex) {
   return knex.schema.createTable('ongs', function (table) {
     table.string('id').primary();

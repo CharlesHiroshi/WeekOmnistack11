@@ -1,7 +1,9 @@
+// Builder de SQL.
 // Update with your config settings.
 
 module.exports = {
 
+  // Database SQLite
   development: {
     client: 'sqlite3',
     connection: {
@@ -10,6 +12,7 @@ module.exports = {
     migrations: {
       directory: './src/database/migrations'
     },
+    // Utilizar para criar campos com valor nulo.
     useNullAsDefault: true,
   },
 
