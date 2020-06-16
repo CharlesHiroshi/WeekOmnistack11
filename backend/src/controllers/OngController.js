@@ -1,12 +1,16 @@
+// Controller da entidade ONG
+// ↓ Módulo Crypto para a criação do ID
 const crypto = require('crypto');
 const connection = require('../database/connection');
 
 module.exports = {
+  // ↓ Listar
   async index(request, response) {
     const ongs = await connection('ongs').select('*');
     return response.json(ongs);
   },
 
+  // ↓ Criar
   async create(request, response) {
     const { name, email, whatsapp, city, uf } = request.body;
 
