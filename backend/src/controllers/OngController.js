@@ -1,6 +1,7 @@
 // Controller da entidade ONG
 // ↓ Módulo Crypto para a criação do ID
 const crypto = require('crypto');
+// ↓ Rota para o DB
 const connection = require('../database/connection');
 
 module.exports = {
