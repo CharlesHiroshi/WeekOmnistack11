@@ -1,11 +1,12 @@
-const connection = require('../database/connection');
+// Lista casos específicos de uma única ONG
+const connection = require('../database/connection')
 
 module.exports = {
   async index(request, response) {
-    const ong_id = request.headers.authorization;
+    const ong_id = request.headers.authorization
     const incidents = await connection('incidents')
       .where('ong_id', ong_id)
-      .select('*');
-    return response.json(incidents);
+      .select('*')
+    return response.json(incidents)
   }
 }
