@@ -26,6 +26,7 @@ button {
   cursor: pointer;
 }
 
+/* ↓ Estilo dos campos Input global */
 form input {
   width: 100%;
   height: 60px;
