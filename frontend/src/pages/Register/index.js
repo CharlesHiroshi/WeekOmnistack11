@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from "react-router-dom";
-import { FiArrowLeft } from "react-icons/fi";
-import api from '../../services/api';
-import './styles.css';
-import logoImg from '../../assets/logo.svg';
+import React, { useState } from 'react'
+import { Link, useHistory } from "react-router-dom"
+import { FiArrowLeft } from "react-icons/fi"
+import api from '../../services/api'
+import './styles.css'
+import logoImg from '../../assets/logo.svg'
 
 
 export default function Register() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
-  const [city, setCity] = useState('');
-  const [uf, setUf] = useState('');
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [whatsapp, setWhatsapp] = useState('')
+  const [city, setCity] = useState('')
+  const [uf, setUf] = useState('')
 
-  const history = useHistory();
+  const history = useHistory()
 
   async function handleRegister(e) {
-    e.preventDefault();
+    e.preventDefault()
     const data = {
       name, email, whatsapp, city, uf
-    };
+    }
     try {
-      const response = await api.post('ongs', data);
-      alert(`Seu ID de acesso: ${response.data.id}`);
-      history.push('/');
+      const response = await api.post('ongs', data)
+      alert(`Seu ID de acesso: ${response.data.id}`)
+      history.push('/')
     } catch (err) {
       alert('Erro no cadastro, tente novamente.')
     }
@@ -39,7 +39,7 @@ export default function Register() {
           <p>Faça seu cadastro, entre na plataforma e ajude pessoas a encontrarem os casos da sua ONG.</p>
           <Link className="back-link" to="/">
             <FiArrowLeft size={16} color="#e02141" />
-            Não tenho cadastro</Link>
+            Já tenho cadastro</Link>
         </section>
         <form onSubmit={handleRegister} >
           <input
@@ -75,5 +75,5 @@ export default function Register() {
         </form>
       </div>
     </div>
-  );
+  )
 }

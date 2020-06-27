@@ -10,6 +10,7 @@ export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
+        {/* ↓ Rota principal deve ter a propriedade exact */}
         <Route path="/" exact component={Logon} />
         <Route path="/register" component={Register} />
         <Route path="/profile" component={Profile} />
